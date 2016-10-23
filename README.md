@@ -1,12 +1,12 @@
-Role Name
-=========
+hxpro.bootstrap
+===============
 
 Bootstrap common stuff.
 
 Requirements
 ------------
 
-epel repository installed
+CentOS
 
 Role Variables
 --------------
@@ -16,7 +16,7 @@ no role variables
 Dependencies
 ------------
 
-hxpro.epel
+ - hxpro.epel - install epel repository
 
 Example Playbook
 ----------------

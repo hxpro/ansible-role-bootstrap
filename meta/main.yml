@@ -17,4 +17,4 @@ galaxy_info:
 dependencies:
   - name: hxpro.epel
     src: hxpro.epel
-    when: ansible_os_family == 'CentOS'
+    when: ansible_os_family == 'RedHat'

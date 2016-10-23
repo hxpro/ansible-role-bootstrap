@@ -28,7 +28,7 @@ Example Playbook
 License
 -------
 
-[WTFPL](LICENSE)
+[WTFPL](LICENSE.md)
 
 Author Information
 ------------------

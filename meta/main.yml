@@ -15,5 +15,6 @@ galaxy_info:
   galaxy_tags: []
 
 dependencies:
-  - role: hxpro.epel
+  - name: hxpro.epel
+    src: hxpro.epel
     when: ansible_os_family == 'CentOS'

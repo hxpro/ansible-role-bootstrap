@@ -25,6 +25,13 @@ Example Playbook
       roles:
          - { role: hxpro.bootstrap }
 
+Testing
+-------
+
+    cd tests
+    ansible-galaxy install -r requirements.yml
+    ansible-playbook test.yml
+
 License
 -------
 

@@ -28,7 +28,7 @@ Example Playbook
 License
 -------
 
-[WTFPL](LICENSE.md)
+[WTFPL](https://raw.githubusercontent.com/hxpro/ansible-role-bootstrap/master/LICENSE)
 
 Author Information
 ------------------

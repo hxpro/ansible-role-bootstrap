@@ -1,0 +1,17 @@
+---
+common_pkg:
+  - vim-enhanced
+  - git
+  - htop
+  - wget
+  - tree
+  - bash-completion
+  - lsof
+  - mawk
+  - curl
+  - coreutils
+  - tcpdump
+  - traceroute
+  - tcpdump
+  - net-tools
+  - nc

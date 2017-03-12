@@ -13,25 +13,31 @@
         command: tail -f /dev/null
         state: started
 
-    - name: add centos7 host
-      add_host: name=centos7 groups=containers
-
-    - name: Create container centos6
+    - name: Create container fedora25
       docker_container:
-        name: centos6
-        image: centos:6
+        name: fedora25
+        image: fedora:25
         recreate: yes
         command: tail -f /dev/null
         state: started
 
-    - name: add centos6 host
-      add_host: name=centos6 groups=containers
+
+    - name: Install python to fedora
+      command: "docker exec fedora25 dnf install -y python python2-dnf"
+
+    - name: add hosts
+      add_host:
+        name: '{{ item }}'
+        groups: containers
+      with_items:
+        - fedora25
+        - centos7
 
 - name: test role
   hosts: containers
   connection: docker
   roles:
-    - ansible-role-bootstrap
+    - role: "{{ playbook_dir }}"
 
 - name: tear down
   hosts: localhost
@@ -44,5 +50,5 @@
         name: '{{ item }}'
         state: absent
       with_items:
-        - centos6
+        - fedora25
         - centos7

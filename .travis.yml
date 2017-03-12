@@ -14,7 +14,7 @@ addons:
     - python-pip
 
 before_install:
-  - docker pull centos:6
+  - docker pull fedora:25
   - docker pull centos:7
 
 install:
@@ -27,7 +27,6 @@ install:
 
 script:
   # Basic role syntax check
-  - cd tests
   - ansible-galaxy install -r requirements.yml
   - ansible-playbook test.yml --syntax-check
   - ansible-playbook test.yml

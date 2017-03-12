@@ -28,7 +28,6 @@ Example Playbook
 Testing
 -------
 
-    cd tests
     ansible-galaxy install -r requirements.yml
     ansible-playbook test.yml
 

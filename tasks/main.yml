@@ -1,3 +1,13 @@
 ---
 - name: Install common packages
-  yum: name={{ common_pkg }} state=present
+  package: name={{ common_pkg }} state=present
+  when: ansible_os_family == 'RedHat'
+
+- name: Add ssh agent line to sudoers
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: SSH_AUTH_SOCK
+    line: Defaults env_keep += "SSH_AUTH_SOCK"
+    validate: 'visudo -cf %s'
+

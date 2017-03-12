@@ -1,6 +1,7 @@
 ---
 common_pkg:
-  - vim-enhanced
+  - sudo
+  - vim
   - git
   - htop
   - wget
@@ -15,3 +16,4 @@ common_pkg:
   - tcpdump
   - net-tools
   - nc
+  - python-pip

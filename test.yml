@@ -5,33 +5,20 @@
   connection: local
 
   tasks:
-    - name: Create container centos7
+    - name: Create container with centos7
       docker_container:
-        name: centos7
-        image: centos:7
+        name: "ansible_bootstrap_test"
+        image: hxpro/docker-centos
         recreate: yes
-        command: tail -f /dev/null
+        command: /usr/sbin/init
+        volumes:
+          - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
         state: started
 
-    - name: Create container fedora25
-      docker_container:
-        name: fedora25
-        image: fedora:25
-        recreate: yes
-        command: tail -f /dev/null
-        state: started
-
-
-    - name: Install python to fedora
-      command: "docker exec fedora25 dnf install -y python python2-dnf"
-
-    - name: add hosts
+    - name: add host
       add_host:
-        name: '{{ item }}'
+        name: 'ansible_bootstrap_test'
         groups: containers
-      with_items:
-        - fedora25
-        - centos7
 
 - name: test role
   hosts: containers
@@ -47,8 +34,5 @@
   tasks:
     - name: Destroy containers
       docker_container:
-        name: '{{ item }}'
+        name: 'ansible_bootstrap_test'
         state: absent
-      with_items:
-        - fedora25
-        - centos7

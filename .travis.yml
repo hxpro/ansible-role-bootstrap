@@ -14,8 +14,7 @@ addons:
     - python-pip
 
 before_install:
-  - docker pull fedora:25
-  - docker pull centos:7
+  - docker info
 
 install:
   # Install ansible

@@ -16,4 +16,4 @@ common_pkg:
   - tcpdump
   - net-tools
   - nc
-  - python-pip
+  - python2-pip

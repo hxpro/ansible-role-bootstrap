@@ -28,6 +28,8 @@ Example Playbook
 Testing
 -------
 
+Test require docker on your localhost
+
     ansible-galaxy install -r requirements.yml
     ansible-playbook test.yml
 
@@ -39,4 +41,4 @@ License
 Author Information
 ------------------
 
-Ansible novice
+Matěj Koudelka <matej@hxpro.cz>

@@ -18,3 +18,4 @@ common_pkg:
   - nc
   - python2-pip
   - mc
+  - lynx

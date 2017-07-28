@@ -17,3 +17,4 @@ common_pkg:
   - net-tools
   - nc
   - python2-pip
+  - mc

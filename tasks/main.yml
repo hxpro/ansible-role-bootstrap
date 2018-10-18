@@ -3,11 +3,16 @@
   package: name={{ common_pkg }} state=present
   when: ansible_os_family == 'RedHat'
 
-- name: Add ssh agent line to sudoers
+- name: Add ssh agent line to sudoers.d/auth_socket
+  copy:
+    content: |
+      Defaults env_keep += "SSH_AUTH_SOCK"
+    dest: '/etc/sudoers.d/auth_socket'
+
+- name: Remove ssh agent line from sudoers
   lineinfile:
     dest: /etc/sudoers
-    state: present
+    state: absent
     regexp: SSH_AUTH_SOCK
     line: Defaults env_keep += "SSH_AUTH_SOCK"
     validate: 'visudo -cf %s'
-

@@ -1,7 +1,18 @@
 ---
+- name: Include platform specific vars
+  include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+
 - name: Install common packages
-  package: name={{ common_pkg }} state=present
+  package:
+    name: "{{ _bootstrap_common_pkg }}"
+    state: present
   when: ansible_os_family == 'RedHat'
+
+- name: Install distribution specific packages
+  package:
+    name: "{{ _bootstrap_distribution_specific_pkg }}"
+    state: present
+  when: _bootstrap_distribution_specific_pkg is defined
 
 - name: Add ssh agent line to sudoers.d/auth_socket
   copy:

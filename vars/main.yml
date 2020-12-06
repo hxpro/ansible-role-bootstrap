@@ -1,5 +1,5 @@
 ---
-common_pkg:
+_bootstrap_common_pkg:
   - sudo
   - vim
   - git
@@ -10,8 +10,6 @@ common_pkg:
   - lsof
   - mawk
   - curl
-  - coreutils
-  - tcpdump
   - traceroute
   - tcpdump
   - net-tools

@@ -1,12 +1,16 @@
-hxpro.bootstrap
-===============
+Ansible role : bootstrap
+========================
 
-Bootstrap common stuff.
+Install packages that I commonly install.
+By default, for security reasons the environment variables are removed by `sudo` command.
+I usually want to keep ssh agents forwarding active, when I work as a super user.
+So this role adds SSH_AUTH_SOCK to default env_keep in `/etc/sudoers.d/auth_socket`
+In the past I used to `/etc/sudoers`, so the role remove the line from this file.
 
 Requirements
 ------------
 
-CentOS
+CentOS 7 or CentOS 8
 
 Role Variables
 --------------
@@ -28,10 +32,7 @@ Example Playbook
 Testing
 -------
 
-Test require docker on your localhost
-
-    ansible-galaxy install -r requirements.yml
-    ansible-playbook test.yml
+    molecule test
 
 License
 -------

@@ -16,6 +16,4 @@ common_pkg:
   - tcpdump
   - net-tools
   - nc
-  - python2-pip
   - mc
-  - lynx

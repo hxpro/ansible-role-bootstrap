@@ -23,7 +23,6 @@ install:
 
 script:
   # Basic role syntax check
-  - ansible-galaxy install -r requirements.yml
   - molecule test
 
 notifications:

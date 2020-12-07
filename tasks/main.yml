@@ -19,6 +19,7 @@
     content: |
       Defaults env_keep += "SSH_AUTH_SOCK"
     dest: '/etc/sudoers.d/auth_socket'
+    mode: '0644'
 
 - name: Remove ssh agent line from sudoers
   lineinfile:

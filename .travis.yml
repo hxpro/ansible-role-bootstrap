@@ -16,7 +16,7 @@ before_install:
 
 install:
   # Install ansible
-  - pip install ansible molecule[docker]
+  - pip install ansible molecule[docker] ansible-lint
   # Check versions
   - molecule --version
 

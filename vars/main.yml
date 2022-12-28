@@ -8,7 +8,6 @@ _bootstrap_common_pkg:
   - tree
   - bash-completion
   - lsof
-  - mawk
   - curl
   - traceroute
   - tcpdump

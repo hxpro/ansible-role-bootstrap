@@ -14,3 +14,4 @@ _bootstrap_common_pkg:
   - net-tools
   - nc
   - mc
+  - iptstate
